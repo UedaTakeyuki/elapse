@@ -60,3 +60,6 @@ main : 66058 ns
 
 ## Just question
 In my environment (Apple Clang version 11.0.0), why does the execution of the **first block** take about **10 times longer** than the execution of subsequent blocks?
+
+## for other language
+**golang** version is available at https://github.com/UedaTakeyuki/erapse.
