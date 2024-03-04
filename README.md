@@ -2,7 +2,7 @@
 
 ## How to use
 
-Include elapse.h and just **declare a variable of type Elapse** at the beginning of the function or block you want to measure elapsed time, **that it!** Fx:
+Include **elapse.h** and just **declare a variable of type Elapse** at the beginning of the function or block you want to measure elapsed time, **that it!** Fx:
 ```
 #include "elapse.h"
 
