@@ -5,6 +5,8 @@
 #include <chrono>
 #include <string_view>
 #include <string>
+
+#ifndef NO_PRINT
 class ELAPSE {
   public:
     ELAPSE(std::string_view prefix){
@@ -32,4 +34,23 @@ class ELAPSE {
     std::string prefix_string;
     std::chrono::steady_clock::time_point start;
 };
+#else
+class ELAPSE {
+  public:
+    ELAPSE(std::string_view prefix){
+    }
+    ELAPSE(){
+    }
+    ~ELAPSE(){
+    }
+    // copy/move construction and any kind of assignment would lead to the cleanup function getting
+    // called twice. We can't have that.
+    ELAPSE(ELAPSE &&) = delete;
+    ELAPSE(const ELAPSE &) = delete;
+    ELAPSE &operator=(const ELAPSE &) = delete;
+    ELAPSE &operator=(ELAPSE &&) = delete;
+  private:
+};
+#endif
+
 #endif // ELAPSE_H_

@@ -58,6 +58,12 @@ test.cpp:4:kerokero : 54 ns
 main : 66058 ns
 ```
 
+## Hide elapse time
+Compile your application with **-DNO_PRINT** option, elapse time is not printed.
+
+## requirement
+-std=c++17 or later because this library is using **string_view**.
+
 ## Just question
 In my environment (Apple Clang version 11.0.0), why does the execution of the **first block** take about **10 times longer** than the execution of subsequent blocks?
 
